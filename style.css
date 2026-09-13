@@ -12,12 +12,20 @@ body {
   margin: 0;
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 12px;
   padding: 16px; /* gutter så innehållet aldrig ligger klistrat mot kanten */
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   background: linear-gradient(160deg, #fef6e4 0%, #e8f3ff 100%);
   color: #1f2933;
+}
+
+.version-info {
+  font-size: 0.75rem;
+  color: #9aa5b1;
+  text-align: center;
 }
 
 .card {

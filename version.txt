@@ -1,0 +1,3 @@
+Specifikation av funktion för att ange version:
+* Längst ner på sidan i lite still skall det stå information om applikationens version
+* Texten skall innehåll datum och tid för versionen samt en revisions identifierar av formen XX.YY.ZZ där XX är en siffa räknas upp vid funktions tillägg, YY är en siffra som räknas upp vid förbättringar av en funktion och ZZ är en siffra som räknas upp vid felrättningar
