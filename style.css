@@ -1,0 +1,109 @@
+/* ---------------------------------------------------------
+   Mobile-first grundprincip: vi designar för smal skärm
+   FÖRST, och kortet blir bara max 420px brett på större
+   skärmar istället för att sträcka ut sig över hela sidan.
+   --------------------------------------------------------- */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px; /* gutter så innehållet aldrig ligger klistrat mot kanten */
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: linear-gradient(160deg, #fef6e4 0%, #e8f3ff 100%);
+  color: #1f2933;
+}
+
+.card {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin: 0 0 4px;
+}
+
+.subtitle {
+  margin: 0 0 20px;
+  color: #616e7c;
+  font-size: 0.95rem;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin: 16px 0 6px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #cbd2d9;
+  border-radius: 8px;
+  background: #f8fafc;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #f3a712;
+}
+
+button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background: #f3a712;
+  color: #1f2933;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:active {
+  background: #d99400;
+}
+
+.error {
+  margin-top: 14px;
+  text-align: center;
+  color: #c0392b;
+  font-size: 0.9rem;
+}
+
+.result {
+  margin-top: 24px;
+  padding: 18px;
+  text-align: center;
+  background: #eef7ee;
+  border-radius: 12px;
+}
+
+.result-number {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #2f7a3d;
+}
+
+.result-text {
+  margin: 6px 0 0;
+  color: #445;
+  font-size: 0.95rem;
+}

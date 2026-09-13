@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <!-- Denna rad gör att sidan skalas rätt på mobiler istället för att visas som en zoomad-ut "datorsida" -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hundålder-kalkylator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="card">
+    <h1>🐶 Hundålder-kalkylator</h1>
+    <p class="subtitle">Räkna ut din hunds ålder i "människoår"</p>
+
+    <form id="age-form">
+      <label for="dog-age">Hundens ålder (år)</label>
+      <input
+        type="number"
+        id="dog-age"
+        name="dog-age"
+        min="0"
+        step="0.5"
+        placeholder="t.ex. 3"
+        inputmode="decimal"
+        required
+      >
+
+      <label for="dog-size">Hundens storlek</label>
+      <select id="dog-size" name="dog-size">
+        <option value="small">Liten (upp till 10 kg)</option>
+        <option value="medium" selected>Mellan (10–25 kg)</option>
+        <option value="large">Stor (25–40 kg)</option>
+        <option value="giant">Jätte (över 40 kg)</option>
+      </select>
+
+      <button type="submit">Beräkna</button>
+    </form>
+
+    <p id="error" class="error" hidden>Ange en giltig ålder (0 eller högre).</p>
+
+    <div id="result" class="result" hidden>
+      <p class="result-number"></p>
+      <p class="result-text"></p>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
