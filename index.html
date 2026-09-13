@@ -10,11 +10,21 @@
 <body>
 
   <main class="card">
-    <h1>🐶 Hundålder-kalkylator</h1>
-    <p class="subtitle">Räkna ut din hunds ålder i "människoår"</p>
+    <div class="top-bar">
+      <select id="lang-select" class="lang-select" aria-label="Välj språk / Choose language">
+        <option value="sv">🇸🇪 Svenska</option>
+        <option value="en-GB">🇬🇧 English (UK)</option>
+        <option value="en-US">🇺🇸 English (US)</option>
+        <option value="de">🇩🇪 Deutsch</option>
+        <option value="fr">🇫🇷 Français</option>
+      </select>
+    </div>
+
+    <h1 id="app-title">🐶 Hundålder-kalkylator</h1>
+    <p class="subtitle" id="subtitle">Räkna ut din hunds ålder i "människoår"</p>
 
     <form id="age-form">
-      <label for="dog-age">Hundens ålder (år)</label>
+      <label for="dog-age" id="age-label">Hundens ålder (år)</label>
       <input
         type="number"
         id="dog-age"
@@ -26,15 +36,15 @@
         required
       >
 
-      <label for="dog-size">Hundens storlek</label>
+      <label for="dog-size" id="size-label">Hundens storlek</label>
       <select id="dog-size" name="dog-size">
-        <option value="small">Liten (upp till 10 kg)</option>
-        <option value="medium" selected>Mellan (10–25 kg)</option>
-        <option value="large">Stor (25–40 kg)</option>
-        <option value="giant">Jätte (över 40 kg)</option>
+        <option id="opt-small" value="small">Liten (upp till 10 kg)</option>
+        <option id="opt-medium" value="medium" selected>Mellan (10–25 kg)</option>
+        <option id="opt-large" value="large">Stor (25–40 kg)</option>
+        <option id="opt-giant" value="giant">Jätte (över 40 kg)</option>
       </select>
 
-      <button type="submit">Beräkna</button>
+      <button type="submit" id="submit-btn">Beräkna</button>
     </form>
 
     <p id="error" class="error" hidden>Ange en giltig ålder (0 eller högre).</p>

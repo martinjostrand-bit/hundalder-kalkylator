@@ -1,0 +1,6 @@
+Specifikation av funktion för språkval
+*Språk skall kunna väljas med en drop-down i övre högra hörnet
+* drop down listan skall det så språk samt en flagga motsvarande språket
+* Följande språk skall finnas: Svenska, Brittisk engelska, US Engelska, Tyska samt franska
+* Efter val av språk skall alla texter vara översatta till det valda språket
+* Enheter för vikt skall anges i för landet etablerade enheter
