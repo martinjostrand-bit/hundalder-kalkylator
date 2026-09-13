@@ -35,13 +35,79 @@ body {
   margin-bottom: 12px;
 }
 
-.lang-select {
+.lang-switcher {
+  position: relative;
+}
+
+.lang-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   width: auto;
+  margin: 0;
   padding: 6px 10px;
   font-size: 0.85rem;
+  font-weight: 400;
   border: 1px solid #cbd2d9;
   border-radius: 8px;
   background: #f8fafc;
+  color: #1f2933;
+  cursor: pointer;
+}
+
+.lang-button:focus,
+.lang-listbox li:focus {
+  outline: 2px solid #f3a712;
+  outline-offset: 1px;
+}
+
+.flag-icon {
+  width: 20px;
+  height: 14px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.chevron {
+  width: 10px;
+  height: 6px;
+  color: #616e7c;
+}
+
+.lang-listbox {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  z-index: 10;
+  margin: 0;
+  padding: 4px;
+  list-style: none;
+  width: max-content;
+  min-width: 100%;
+  background: #ffffff;
+  border: 1px solid #cbd2d9;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.lang-listbox li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.lang-listbox li:hover {
+  background: #f8fafc;
+}
+
+.lang-listbox li[aria-selected="true"] {
+  background: #fef3dd;
+  font-weight: 600;
 }
 
 h1 {

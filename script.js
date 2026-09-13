@@ -149,7 +149,12 @@ const translations = {
 let currentLang = "sv";
 let lastCalculation = null; // { type: "result", humanAge } | { type: "error" } | null
 
-const langSelect = document.getElementById("lang-select");
+const langSwitcher = document.getElementById("lang-switcher");
+const langButton = document.getElementById("lang-button");
+const langButtonFlag = document.getElementById("lang-button-flag");
+const langButtonLabel = document.getElementById("lang-button-label");
+const langListbox = document.getElementById("lang-listbox");
+const langOptions = Array.from(langListbox.querySelectorAll("li"));
 const form = document.getElementById("age-form");
 const resultEl = document.getElementById("result");
 const errorEl = document.getElementById("error");
@@ -191,10 +196,68 @@ function renderLastCalculation(lang) {
   resultEl.hidden = false;
 }
 
-langSelect.addEventListener("change", function () {
-  currentLang = langSelect.value;
+function openLangListbox() {
+  langListbox.hidden = false;
+  langButton.setAttribute("aria-expanded", "true");
+}
+
+function closeLangListbox() {
+  langListbox.hidden = true;
+  langButton.setAttribute("aria-expanded", "false");
+}
+
+function selectLanguage(lang) {
+  currentLang = lang;
+  const selectedOption = langOptions.find((li) => li.dataset.lang === lang);
+
+  langButtonFlag.setAttribute("href", selectedOption.querySelector("use").getAttribute("href"));
+  langButtonLabel.textContent = selectedOption.querySelector("span").textContent;
+
+  langOptions.forEach((li) => {
+    li.setAttribute("aria-selected", li.dataset.lang === lang ? "true" : "false");
+  });
+
+  closeLangListbox();
+  langButton.focus();
   applyStaticTranslations(currentLang);
   renderLastCalculation(currentLang);
+}
+
+langButton.addEventListener("click", function () {
+  if (langListbox.hidden) {
+    openLangListbox();
+    langOptions.find((li) => li.dataset.lang === currentLang).focus();
+  } else {
+    closeLangListbox();
+  }
+});
+
+langOptions.forEach((li, index) => {
+  li.addEventListener("click", function () {
+    selectLanguage(li.dataset.lang);
+  });
+
+  li.addEventListener("keydown", function (event) {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      selectLanguage(li.dataset.lang);
+    } else if (event.key === "ArrowDown") {
+      event.preventDefault();
+      langOptions[(index + 1) % langOptions.length].focus();
+    } else if (event.key === "ArrowUp") {
+      event.preventDefault();
+      langOptions[(index - 1 + langOptions.length) % langOptions.length].focus();
+    } else if (event.key === "Escape") {
+      closeLangListbox();
+      langButton.focus();
+    }
+  });
+});
+
+document.addEventListener("click", function (event) {
+  if (!langSwitcher.contains(event.target)) {
+    closeLangListbox();
+  }
 });
 
 form.addEventListener("submit", function (event) {
