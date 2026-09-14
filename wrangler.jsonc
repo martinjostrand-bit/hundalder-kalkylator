@@ -1,0 +1,16 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "hundalder-kalkylator",
+  "compatibility_date": "2026-09-11",
+  "main": "worker.js",
+  "assets": {
+    "directory": ".",
+    "binding": "ASSETS"
+  },
+  "kv_namespaces": [
+    {
+      "binding": "STATS_KV",
+      "id": "b69cf5e7d280457399aefbdd53063bcc"
+    }
+  ]
+}
