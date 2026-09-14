@@ -52,6 +52,13 @@
 
   <main class="card">
     <div class="top-bar">
+      <button type="button" id="stats-toggle" class="icon-button" aria-pressed="false" aria-label="Statistik" title="Statistik">
+        <svg class="stats-icon" viewBox="0 0 20 20" aria-hidden="true">
+          <rect x="2" y="10" width="4" height="8" rx="1"/>
+          <rect x="8" y="5" width="4" height="13" rx="1"/>
+          <rect x="14" y="2" width="4" height="16" rx="1"/>
+        </svg>
+      </button>
       <div class="lang-switcher" id="lang-switcher">
         <button type="button" id="lang-button" class="lang-button" aria-haspopup="listbox" aria-expanded="false">
           <svg class="flag-icon" aria-hidden="true"><use id="lang-button-flag" href="#flag-se"></use></svg>
@@ -82,6 +89,19 @@
             <span>Français</span>
           </li>
         </ul>
+      </div>
+    </div>
+
+    <div id="stats-panel" class="stats-panel" hidden>
+      <h2 id="stats-title">Statistik över sajtens användning</h2>
+      <p id="stats-status" class="stats-status" hidden></p>
+      <div class="chart-block">
+        <h3 id="stats-age-title">Uträkningar per hundålder</h3>
+        <div id="stats-age-chart" class="bar-chart"></div>
+      </div>
+      <div class="chart-block">
+        <h3 id="stats-size-title">Uträkningar per hundstorlek</h3>
+        <div id="stats-size-chart" class="bar-chart"></div>
       </div>
     </div>
 
@@ -120,7 +140,7 @@
     </div>
   </main>
 
-  <footer class="version-info" id="version-info">v03.00.00 · 2026-09-13 18:50</footer>
+  <footer class="version-info" id="version-info">v04.00.00 · 2026-09-14 20:15</footer>
 
   <script src="script.js"></script>
 </body>

@@ -1,0 +1,6 @@
+specifikation av en funktion för att presentera information om hur siten används:
+* På siten skall information om vilka uträkningar som användarna av siten gjort
+* data skall sparas permanent mellan sessionerna
+* data som skall presenteras är antalet uträkningar per hundens ålder, antalet uträkningar per storlek av hund
+* Data skall visas som två enkla stapeldiagram
+* Data skall visas när man trycker på en ikon strax till vänster om valet av språk som en av och på knapp
