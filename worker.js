@@ -1,6 +1,8 @@
 // Worker-entrypoint. Hanterar /api/stats och serverar i övrigt
 // de statiska filerna (index.html, style.css, script.js) via
 // ASSETS-bindningen. Se wrangler.jsonc.
+//
+// (Testrad för att verifiera CI/CD-pipelinen end-to-end.)
 
 const AGE_BUCKET_IDS = ["0-1", "1-3", "3-6", "6-9", "9-12", "12+"];
 const SIZES = ["small", "medium", "large", "giant"];
